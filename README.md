@@ -2,7 +2,7 @@
 
 ## Localizacion del curso
 
-[https://www.udemy.com/course/curso-laravel-crea-aplicaciones-y-sitios-web-con-php-y-mvc]
+[Link a Udemy](https://www.udemy.com/course/curso-laravel-crea-aplicaciones-y-sitios-web-con-php-y-mvc)
 por Juan Pablo De la torre Valdez
 
 ## Pasos para iniciar laravel
@@ -12,11 +12,33 @@ por Juan Pablo De la torre Valdez
 <h4>Para crear un alias en la base de wsl para iniciar los contenedores de devstagram</h4>
 <pre>alias devstagram='dir=$(pwd); cd _projects/Laravel9-Php8-MVC/devstagram && [ -f sail ] && sh sail up || sh vendor/bin/sail up; cd $dir'</pre>
 
+## Traducir los lang al español
+
+Desde consola usando la libreria [Laravel Lang](https://github.com/Laravel-Lang/lang)
+
+```bash
+sail composer require --dev laravel-lang/common
+sail artisan lang:add es
+```
+
+o combinandola con [MarcoGomesr
+/
+laravel-validation-en-espanol](https://github.com/MarcoGomesr/laravel-validation-en-espanol)
+
+```bash
+git clone https://github.com/MarcoGomesr/laravel-validation-en-espanol.git lang/
+```
+
+### **Y si deseamos que el español este por defecto**
+
+En la carpeta <code>/config/app.php</code> remplazar la variable <code>'locale' => 'en'
+</code> por <code>'locale' => 'es'</code>
+
 ## Despliegue en DomCloud
 
 Sin deploy por el momento
 
-[https://my.domcloud.co/user/host/] <- Panel de deploy in domcloud
+<https://my.domcloud.co/user/host/> <- Panel de deploy in domcloud
 
 ## Si queremos hacer un deploy completo borrando base de datos
 
