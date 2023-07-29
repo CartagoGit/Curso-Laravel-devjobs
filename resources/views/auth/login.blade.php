@@ -77,10 +77,10 @@
 
         <div class="mt-4 flex items-center justify-between">
 
-            <x-link :route="'password.request'">
+            <x-link :href="route('password.request')">
                 {{ __('Forgot your password?') }}
             </x-link>
-            <x-link :route="'register'">
+            <x-link :href="route('register')">
                 ¿{{ __('Register') }}?
             </x-link>
         </div>
