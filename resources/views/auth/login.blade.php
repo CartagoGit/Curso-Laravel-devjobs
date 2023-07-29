@@ -56,7 +56,7 @@
         </div>
 
         <!-- Remember Me -->
-        <div class="mt-4 block">
+        <div class="mt-4 block flex items-center justify-between">
             <label
                 class="inline-flex items-center"
                 for="remember_me"
@@ -70,6 +70,9 @@
                 <span
                     class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
             </label>
+            <x-primary-button class="ml-3">
+                {{ __('Log in') }}
+            </x-primary-button>
         </div>
 
         <div class="mt-4 flex items-center justify-between">
@@ -81,8 +84,5 @@
                 ¿{{ __('Register') }}?
             </x-link>
         </div>
-        <x-primary-button class="ml-3">
-            {{ __('Log in') }}
-        </x-primary-button>
     </form>
 </x-guest-layout>
