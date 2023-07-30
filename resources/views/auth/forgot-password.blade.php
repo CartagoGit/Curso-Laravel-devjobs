@@ -4,22 +4,51 @@
     </div>
 
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-auth-session-status
+        class="mb-4"
+        :status="session('status')"
+    />
 
-    <form method="POST" action="{{ route('password.email') }}">
+    <form
+        method="POST"
+        action="{{ route('password.email') }}"
+    >
         @csrf
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-input-label
+                for="email"
+                :value="__('Email')"
+            />
+            <x-text-input
+                class="mt-1 block w-full"
+                id="email"
+                name="email"
+                type="email"
+                :value="old('email')"
+                required
+                autofocus
+            />
+            <x-input-error
+                class="mt-2"
+                :messages="$errors->get('email')"
+            />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
+        <div class="mt-4 flex items-center justify-end">
+            <x-primary-button class="w-[100%] flex justify-center">
                 {{ __('Email Password Reset Link') }}
             </x-primary-button>
         </div>
+        <div class="mt-4 flex items-center justify-between">
+            <x-link :route="'login'">
+                {{ __('Do you remember your password?') }}
+            </x-link>
+            <x-link :route="'register'">
+                ¿{{ __('Register') }}?
+            </x-link>
+        </div>
+
     </form>
 </x-guest-layout>
