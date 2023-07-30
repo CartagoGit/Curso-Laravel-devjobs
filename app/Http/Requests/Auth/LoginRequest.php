@@ -27,9 +27,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 'username' => ['required', 'string'],
             'credential' => ['required', 'string'],
-            // 'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
         ];
     }
@@ -47,11 +45,12 @@ class LoginRequest extends FormRequest
             'password' => $this->input('password'),
         ];
 
+        //* Lo modificamos para que acepte el email o el nombre de usuario
         $credential = $this->input('credential');
         if (filter_var($credential, FILTER_VALIDATE_EMAIL)) {
             $credentials['email'] = $credential;
         } else {
-            $credentials['username'] = $credential;
+            $credentials['name'] = $credential;
         }
 
 
