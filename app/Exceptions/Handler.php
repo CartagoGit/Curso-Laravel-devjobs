@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Session\TokenMismatchException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -17,6 +18,16 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+
+    // * Añadimos esto para que nos redirija al login en caso de que haya una excepcion con el token
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof TokenMismatchException) {
+            return redirect()->route('login'); // Reemplaza 'login' por el nombre de la ruta de inicio de sesión de tu aplicación
+        }
+
+        return parent::render($request, $exception);
+    }
 
     /**
      * Register the exception handling callbacks for the application.
