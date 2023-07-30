@@ -70,7 +70,7 @@
                 <span
                     class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
             </label>
-            <x-primary-button class="ml-3">
+            <x-primary-button>
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
