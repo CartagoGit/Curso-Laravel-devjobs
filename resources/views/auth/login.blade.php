@@ -14,22 +14,22 @@
         <!-- Email Address -->
         <div>
             <x-input-label
-                for="email"
-                :value="__('Email')"
+                for="credential"
+                :value="__('Email or Username')"
             />
             <x-text-input
                 class="mt-1 block w-full"
-                id="email"
-                name="email"
-                type="email"
-                :value="old('email')"
+                id="credential"
+                name="credential"
+                type="text"
+                :value="old('credential')"
                 required
                 autofocus
-                autocomplete="email"
+                autocomplete="username"
             />
             <x-input-error
                 class="mt-2"
-                :messages="$errors->get('email')"
+                :messages="$errors->get('username')"
             />
         </div>
 
