@@ -48,6 +48,28 @@
             />
         </div>
 
+        <!-- Role Address -->
+        <div class="mt-4">
+            <x-input-label
+                for="role"
+                :value="'Tipo de cuenta'"
+            />
+            <select
+                class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-indigo-600 dark:focus:ring-indigo-600"
+                id="role"
+                name="role"
+            >
+                <option>-- Selecciona un rol --</option>
+                <option value="1">Developer - Buscar empleo</option>
+                <option value="2">Recruiter - Buscar empleados</option>
+            </select>
+
+            <x-input-error
+                class="mt-2"
+                :messages="$errors->get('rol')"
+            />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label
