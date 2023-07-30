@@ -35,7 +35,11 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255', 'unique:' . User::class],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults(), 'min:6'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'role' => ['required', 'numeric', 'between:1,2']
+        ],
+        [
+            'role.between' => 'El campo rol debe ser un rol válido.',
         ]);
 
         $user = User::create([

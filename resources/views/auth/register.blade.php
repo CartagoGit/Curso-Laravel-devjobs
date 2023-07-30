@@ -59,14 +59,14 @@
                 id="role"
                 name="role"
             >
-                <option>-- Selecciona un rol --</option>
+                <option value="">-- Selecciona un rol --</option>
                 <option value="1">Developer - Buscar empleo</option>
                 <option value="2">Recruiter - Buscar empleados</option>
             </select>
 
             <x-input-error
                 class="mt-2"
-                :messages="$errors->get('rol')"
+                :messages="$errors->get('role')"
             />
         </div>
 
