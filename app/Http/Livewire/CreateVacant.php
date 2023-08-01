@@ -10,10 +10,10 @@ class CreateVacant extends Component
     public function render()
     {
         // Consultar base de datos
-        $salarys = Salary::all();
+        $salaries = Salary::all();
 
         return view('livewire.create-vacant', [
-            'salarys' => $salarys
+            'salaries' => $salaries
         ]);
     }
 }

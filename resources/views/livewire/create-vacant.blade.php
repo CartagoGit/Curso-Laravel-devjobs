@@ -28,7 +28,10 @@
             id="salary"
             name="salary"
         >
-        
+            <option>-- Seleccione un rango --</option>
+            @foreach ($salaries as $salary)
+                <option value="{{ $salary->id }}">{{$salary->salary}}</option>
+            @endforeach
 
         </select>
 
@@ -101,7 +104,7 @@
             :value="'Descripción de la vacante'"
         />
         <textarea
-            class="w-full rounded-md border-gray-300 h-72 min-h-[100px] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-indigo-600 dark:focus:ring-indigo-600"
+            class="h-72 min-h-[100px] w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-indigo-600 dark:focus:ring-indigo-600"
             name="description"
             placeholder="Descripción del puesto, experiencia, tipo de trabajo a realizar y cualquier información relevante de la vacante"
         ></textarea>
@@ -128,7 +131,7 @@
         />
     </div>
 
-    <x-primary-button class="w-full flex items-center justify-center">
+    <x-primary-button class="flex w-full items-center justify-center">
         <span>Crear vacante</span>
     </x-primary-button>
 </form>
