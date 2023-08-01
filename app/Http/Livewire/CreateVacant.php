@@ -8,6 +8,9 @@ class CreateVacant extends Component
 {
     public function render()
     {
+        // Consultar base de datos
+
+        
         return view('livewire.create-vacant');
     }
 }
