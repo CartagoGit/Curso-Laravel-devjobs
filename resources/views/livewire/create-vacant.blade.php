@@ -51,6 +51,10 @@
             id="category"
             name="category"
         >
+        <option>-- Seleccione una categoría --</option>
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}">{{$category->salary}}</option>
+        @endforeach
 
         </select>
 

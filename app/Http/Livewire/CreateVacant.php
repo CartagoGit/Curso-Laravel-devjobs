@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Salary;
 use Livewire\Component;
 
@@ -11,9 +12,10 @@ class CreateVacant extends Component
     {
         // Consultar base de datos
         $salaries = Salary::all();
+        $categories = Category::all();
 
         return view('livewire.create-vacant', [
-            'salaries' => $salaries
+            'salaries' => $salaries, 'categories' => $categories
         ]);
     }
 }
