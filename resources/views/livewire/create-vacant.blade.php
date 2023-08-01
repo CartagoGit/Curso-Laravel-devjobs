@@ -53,7 +53,7 @@
         >
         <option>-- Seleccione una categoría --</option>
         @foreach ($categories as $category)
-            <option value="{{ $category->id }}">{{$category->salary}}</option>
+            <option value="{{ $category->id }}">{{$category->category}}</option>
         @endforeach
 
         </select>
