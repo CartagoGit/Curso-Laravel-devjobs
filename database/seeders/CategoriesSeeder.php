@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class SalarySeeder extends Seeder
+class CategoriesSeeder extends Seeder
 {
 
     /**
@@ -16,56 +16,44 @@ class SalarySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('salaries')->insert([
-            'salary' => '$0 - $499',
+        DB::table('categories')->insert([
+            'category' => 'Backend Developer',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        DB::table('salaries')->insert([
-            'salary' => '$500 - $749',
+        DB::table('categories')->insert([
+            'category' => 'Front end Developer',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        DB::table('salaries')->insert([
-            'salary' => '$750 - $999',
+        DB::table('categories')->insert([
+            'category' => 'Mobile Developer',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        DB::table('salaries')->insert([
-            'salary' => '$1000 - $1499',
+        DB::table('categories')->insert([
+            'category' => 'Techlead',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        DB::table('salaries')->insert([
-            'salary' => '$1500 - $1999',
+        DB::table('categories')->insert([
+            'category' => 'UX / UI Design',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        DB::table('salaries')->insert([
-            'salary' => '$2000 - $2499',
+        DB::table('categories')->insert([
+            'category' => 'Software Architecture',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
-        DB::table('salaries')->insert([
-            'salary' => '$2500 - $2999',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-
-        DB::table('salaries')->insert([
-            'salary' => '$3000 - $4999',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-
-        DB::table('salaries')->insert([
-            'salary' => '+$5000',
+        DB::table('categories')->insert([
+            'category' => 'Devops',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);

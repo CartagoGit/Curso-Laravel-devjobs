@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Database\Seeders\SalarySeeder;
+use Database\Seeders\CategoriesSeeder;
+use Database\Seeders\SalariesSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(SalarySeeder::class);
+        $this->call(SalariesSeeder::class);
+        $this->call(CategoriesSeeder::class);
     }
 }
