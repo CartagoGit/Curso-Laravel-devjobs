@@ -38,7 +38,7 @@ class CreateVacant extends Component
     }
 
     public function createVacant(){
-        $this->validate();
-        dd($this->title);
+        $data = $this->validate();
+        $data['image'] = $this->image->store('images/vacants', 'public');
     }
 }
