@@ -98,9 +98,10 @@
             class="mt-1 block w-full"
             id="last_day_of_vacant"
             name="last_day_of_vacant"
-            type="text"
+            type="date"
             wire:model="last_day_of_vacant"
             :value="old('last_day_of_vacant')"
+            min="{{ now()->format('Y-m-d') }}"
             placeholder="Último día para aplicar la vacante"
         />
         <x-input-error
