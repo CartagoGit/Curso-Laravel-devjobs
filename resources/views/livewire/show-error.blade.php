@@ -1,3 +1,4 @@
-<div>
-    {{-- The Master doesn't talk, he acts. --}}
+<div class="space-y-1 text-sm text-red-600 dark:text-red-400">
+
+  {{ $message }}
 </div>

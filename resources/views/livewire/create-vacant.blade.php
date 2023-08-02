@@ -1,4 +1,7 @@
-<form class="space-y-5 md:w-1/2" wire:submit.prevent='createVacant'>
+<form
+    class="space-y-5 md:w-1/2"
+    wire:submit.prevent='createVacant'
+>
     <div>
         <x-input-label
             for="title"
@@ -83,10 +86,13 @@
             :value="old('company')"
             placeholder="Nombre de la empresa: ej. Google, Netflix, Shopify ..."
         />
-        <x-input-error
-            class="mt-2"
-            :messages="$errors->get('company')"
-        />
+
+        @error('company')
+            <livewire:show-error
+                class="mt-2"
+                :message="$message"
+            />
+        @enderror
     </div>
 
     <div>
@@ -104,10 +110,14 @@
             min="{{ now()->format('Y-m-d') }}"
             placeholder="Último día para aplicar la vacante"
         />
-        <x-input-error
-            class="mt-2"
-            :messages="$errors->get('last_day_of_vacant')"
-        />
+
+        @error('last_day_of_vacant')
+            <livewire:show-error
+                class="mt-2"
+                :message="$message"
+            />
+        @enderror
+
     </div>
 
     <div>
