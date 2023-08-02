@@ -32,7 +32,8 @@
         >
             <option>-- Seleccione un rango --</option>
             @foreach ($salaries as $salary)
-                <option value="{{ $salary->id }}">{{$salary->salary}}</option>
+                <option value="{{ $salary->id }}">{{ $salary->salary }}
+                </option>
             @endforeach
 
         </select>
@@ -52,11 +53,13 @@
             class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-indigo-600 dark:focus:ring-indigo-600"
             id="category"
             name="category"
+            wire:model="category"
         >
-        <option>-- Seleccione una categoría --</option>
-        @foreach ($categories as $category)
-            <option value="{{ $category->id }}">{{$category->category}}</option>
-        @endforeach
+            <option>-- Seleccione una categoría --</option>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->category }}
+                </option>
+            @endforeach
 
         </select>
 
@@ -76,6 +79,7 @@
             id="company"
             name="company"
             type="text"
+            wire:model="company"
             :value="old('company')"
             placeholder="Nombre de la empresa: ej. Google, Netflix, Shopify ..."
         />
@@ -95,6 +99,7 @@
             id="last_day_of_vacant"
             name="last_day_of_vacant"
             type="text"
+            wire:model="last_day_of_vacant"
             :value="old('last_day_of_vacant')"
             placeholder="Último día para aplicar la vacante"
         />
@@ -111,7 +116,9 @@
         />
         <textarea
             class="h-72 min-h-[100px] w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-indigo-600 dark:focus:ring-indigo-600"
+            id="description"
             name="description"
+            wire:model="description"
             placeholder="Descripción del puesto, experiencia, tipo de trabajo a realizar y cualquier información relevante de la vacante"
         ></textarea>
         <x-input-error

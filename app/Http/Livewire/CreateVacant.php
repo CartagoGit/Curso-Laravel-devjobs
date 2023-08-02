@@ -17,7 +17,12 @@ class CreateVacant extends Component
     public $description;
 
     protected $rules = [
-        'title' => 'required|string'
+        'title' => 'required|string',
+        'salary' => 'required',
+        'category' => 'required',
+        'company' => 'required|string',
+        'last_day_of_vacant' => 'required|date',
+        'description' => 'required|string',
     ];
     public function render()
     {
