@@ -163,16 +163,18 @@
             wire:model="image"
             accept="image/*"
         />
+
         @if ($image)
-            <div class="flex w-full justify-center mt-3">
+            <div class="mt-3 flex w-full justify-center">
                 <img
-                    class="h-40 w-40 object-cover rounded-lg border-2 border-dashed border-gray-600"
+                    class="h-40 w-40 rounded-lg border-2 border-dashed border-gray-600 object-cover"
                     src="{{ $image->temporaryUrl() }}"
                     alt="Imagen de la vacante"
                 >
+
             </div>
         @endif
-        @error('image')
+        @error('image' && $image !== '')
             <livewire:show-error
                 class="mt-2"
                 :message="$message"
