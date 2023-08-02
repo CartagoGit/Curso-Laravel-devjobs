@@ -16,10 +16,16 @@
             :value="old('title')"
             placeholder="Título de la vacante"
         />
-        <x-input-error
+        {{-- <x-input-error
             class="mt-2"
             :messages="$errors->get('title')"
-        />
+        /> --}}
+        @error('title')
+            <livewire:show-error
+                class="mt-2"
+                :message="$message"
+            />
+        @enderror
     </div>
 
     <div>
@@ -41,10 +47,12 @@
 
         </select>
 
-        <x-input-error
-            class="mt-2"
-            :messages="$errors->get('salary')"
-        />
+        @error('salary')
+            <livewire:show-error
+                class="mt-2"
+                :message="$message"
+            />
+        @enderror
     </div>
 
     <div>
@@ -66,10 +74,12 @@
 
         </select>
 
-        <x-input-error
-            class="mt-2"
-            :messages="$errors->get('category')"
-        />
+        @error('category')
+            <livewire:show-error
+                class="mt-2"
+                :message="$message"
+            />
+        @enderror
     </div>
 
     <div>
@@ -132,10 +142,12 @@
             wire:model="description"
             placeholder="Descripción del puesto, experiencia, tipo de trabajo a realizar y cualquier información relevante de la vacante"
         ></textarea>
-        <x-input-error
-            class="mt-2"
-            :messages="$errors->get('description')"
-        />
+        @error('description')
+            <livewire:show-error
+                class="mt-2"
+                :message="$message"
+            />
+        @enderror
     </div>
 
     <div>
@@ -150,10 +162,12 @@
             type="file"
             wire:model="image"
         />
-        <x-input-error
+        @error('image')
+        <livewire:show-error
             class="mt-2"
-            :messages="$errors->get('image')"
+            :message="$message"
         />
+    @enderror
     </div>
 
     <x-primary-button class="flex w-full items-center justify-center">
