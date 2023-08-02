@@ -161,13 +161,14 @@
             name="image"
             type="file"
             wire:model="image"
+            accept="image/*"
         />
         @error('image')
-        <livewire:show-error
-            class="mt-2"
-            :message="$message"
-        />
-    @enderror
+            <livewire:show-error
+                class="mt-2"
+                :message="$message"
+            />
+        @enderror
     </div>
 
     <x-primary-button class="flex w-full items-center justify-center">
