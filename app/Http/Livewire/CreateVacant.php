@@ -8,6 +8,17 @@ use Livewire\Component;
 
 class CreateVacant extends Component
 {
+
+    public $title;
+    public $salary;
+    public $category;
+    public $company;
+    public $last_day_of_vacant;
+    public $description;
+
+    protected $rules = [
+        'title' => 'required|string'
+    ];
     public function render()
     {
         // Consultar base de datos
