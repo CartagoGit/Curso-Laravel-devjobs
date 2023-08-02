@@ -15,6 +15,7 @@ class CreateVacant extends Component
     public $company;
     public $last_day_of_vacant;
     public $description;
+    public $image;
 
     protected $rules = [
         'title' => 'required|string',
@@ -23,6 +24,7 @@ class CreateVacant extends Component
         'company' => 'required|string',
         'last_day_of_vacant' => 'required|date',
         'description' => 'required|string',
+        'image' => 'required|image|max:1024',
     ];
     public function render()
     {
@@ -33,5 +35,10 @@ class CreateVacant extends Component
         return view('livewire.create-vacant', [
             'salaries' => $salaries, 'categories' => $categories
         ]);
+    }
+
+    public function createVacant(){
+        $this->validate();
+        dd($this->title);
     }
 }

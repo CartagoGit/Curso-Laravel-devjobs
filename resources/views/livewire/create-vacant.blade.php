@@ -1,4 +1,4 @@
-<form class="space-y-5 md:w-1/2">
+<form class="space-y-5 md:w-1/2" wire:submit.prevent='createVacant'>
     <div>
         <x-input-label
             for="title"
@@ -138,6 +138,7 @@
             id="image"
             name="image"
             type="file"
+            wire:model="image"
         />
         <x-input-error
             class="mt-2"
