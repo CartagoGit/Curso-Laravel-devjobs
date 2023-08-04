@@ -165,10 +165,10 @@
         />
 
         @if ($image)
-            <div
-                class="max-width-[400px] max-heigth-[400px] mt-3 flex w-full justify-center">
+            <div class="mt-3 flex max-h-[400px] w-full justify-center">
+
                 <img
-                    class="h-40 w-40 rounded-lg border-2 border-dashed border-gray-600 object-cover"
+                    class="rounded-lg border-2 border-dashed border-gray-600 object-contain mx-auto"
                     src="{{ $image->temporaryUrl() }}"
                     alt="Imagen de la vacante"
                 >
