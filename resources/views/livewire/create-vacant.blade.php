@@ -168,7 +168,7 @@
             <div class="mt-3 flex max-h-[400px] w-full justify-center">
 
                 <img
-                    class="rounded-lg border-2 border-dashed border-gray-600 object-contain mx-auto"
+                    class="mx-auto rounded-lg border-2 border-dashed border-gray-600 object-contain"
                     src="{{ $image->temporaryUrl() }}"
                     alt="Imagen de la vacante"
                 >
@@ -184,6 +184,8 @@
     </div>
 
     <x-primary-button class="flex w-full items-center justify-center">
-        <span>Crear vacante</span>
+        <span>
+            Crear vacante
+        </span>
     </x-primary-button>
 </form>
