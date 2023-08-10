@@ -175,7 +175,7 @@
 
             </div>
         @endif
-        @error('image' && $image !== '')
+        @error('image')
             <livewire:show-error
                 class="mt-2"
                 :message="$message"
