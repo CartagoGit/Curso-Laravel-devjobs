@@ -49,9 +49,9 @@ class CreateVacant extends Component
         $image = $this->image->store('images/vacants', 'public');
         $image_name = str_replace('images/vacants/', '', $image);
 
-        
-        // Crear la vacante
 
+        // Crear la vacante
+        Can
 
         // Crear un mensaje
 
