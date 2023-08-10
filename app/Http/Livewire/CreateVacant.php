@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Salary;
+use App\Models\Vacant;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -51,7 +52,17 @@ class CreateVacant extends Component
 
 
         // Crear la vacante
-        Can
+        Vacant::create([
+            'title' => $data['title'],
+            'salary_id' => $data['salary'],
+            'category_id' => $data['category'],
+            'company' => $data['company'],
+            'last_day_of_vacant' => $data['last_day_of_vacant'],
+            'description' => $data['description'],
+            'image' => $image_name,
+            'published' => 1,
+            'user_id' => auth()->user()->id
+        ]);
 
         // Crear un mensaje
 
