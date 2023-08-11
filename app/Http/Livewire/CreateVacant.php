@@ -48,7 +48,8 @@ class CreateVacant extends Component
         // Almacenar la imagen
         // $data['image'] = $this->image->store('images/vacants', 'public');
         $image = $this->image->store('images/vacants', 'public');
-        $image_name = str_replace('images/vacants/', '', $image);
+        // $image_name = str_replace('images/vacants/', '', $image);
+        $data['image'] = str_replace('images/vacants/', '', $image);
 
         // Crear la vacante
         Vacant::create([
@@ -58,7 +59,8 @@ class CreateVacant extends Component
             'company' => $data['company'],
             'last_day_of_vacant' => $data['last_day_of_vacant'],
             'description' => $data['description'],
-            'image' => $image_name,
+            // 'image' => $image_name,
+            'image' => $data['image'],
             'user_id' => auth()->user()->id
         ]);
 
@@ -67,6 +69,5 @@ class CreateVacant extends Component
 
         // Redireccionar al usuario
         return redirect()->route('vacants.index');
-
     }
 }
